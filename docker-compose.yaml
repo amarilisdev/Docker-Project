@@ -11,6 +11,7 @@ services:
     environment:
       - MONGO_DB_USERNAME=admin
       - MONGO_DB_PWD=password
+
   mongodb:
     image: mongo
     container_name: mongodb
@@ -19,6 +20,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db   # <-- Aquí está bien
+
   mongo-express:
     image: mongo-express
     ports:
@@ -27,4 +31,8 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
-    
+
+volumes:
+  mongo-data:
+    driver: local
+     

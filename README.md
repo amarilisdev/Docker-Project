@@ -1,13 +1,22 @@
-# JavaScript Hello World Project
+# Docker Demo Project
 
-This project contains a simple `js` folder with an `index.js` file that prints 'Hello World' to the console.
+Proyecto de ejemplo: Node.js + MongoDB + Docker Compose.
 
-## How to Run
+## Requisitos
 
-1. Open a terminal in the project root.
-2. Run:
-   ```bash
-   node js/index.js
-   ```
+- Docker
+- Docker Compose
 
-You should see `Hello World` printed in the terminal.
+## Estructura
+
+- `app/` — Código fuente de la app Node.js
+- `Dockerfile` — Imagen de la app
+- `docker-compose.yaml` — Orquestación de servicios
+- `Makefile` — Comandos útiles
+
+## Uso
+
+```bash
+docker compose up --build
+# o usando Makefile
+make up

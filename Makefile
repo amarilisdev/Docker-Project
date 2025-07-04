@@ -5,6 +5,9 @@
 # .PHONY evita que make se confunda si existe un archivo con el mismo nombre
 .PHONY: up down logs clean help
 
+# Comando por defecto si solo se escribe "make"
+default: help
+
 # Levanta todos los servicios en segundo plano y reconstruye las imágenes
 up:
 	@echo "🚀  Levantando los contenedores..."
